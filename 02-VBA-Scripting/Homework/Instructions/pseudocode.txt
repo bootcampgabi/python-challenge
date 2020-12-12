@@ -1,0 +1,63 @@
+
+
+summaryrow = 0
+totalvolume = 0
+closingprice = 0
+percentchange = 0
+
+openingprice = Cells(2,3).Value
+
+' Bonus
+max_increase = 0
+max_ticker = ""
+
+min_increase = 9999999999999
+min_ticker = ""
+
+
+Loop through all rows in column 1
+
+  totalvolume = totalvolume + cellcalledvol
+
+  if current cell ticker different from next cell ticker then
+
+    'get the current row's closing price
+    closingprice = cellF
+
+    yearchange = closingprice - openingprice
+    'Put yearchange over in my summary table
+    'and changecolor of column in summary table
+
+    if yearchange > max_increase then
+      max_increase = yearchange
+      max_ticker = whatever the current ticker is: Cells(i,1).Value
+    end if
+
+    if yearchange < min_increase then
+      min_increase = yearchange
+      min_ticker = whatever the current ticker is: Cells(i,1).Value
+    end if
+
+
+    if openingprice > 0 then
+      percentchange = yearchange / openingprice
+    else
+      percentchange = 0
+    'Put percentchange over in summary table
+
+
+
+    openingprice = Cells(i+1,3).Value
+
+    summaryrow = summaryrow + 1
+    'This is where we want to update our summary table with ticker and volume
+
+
+    'after we update need to resest totalvolume
+    totalvolume = 0
+    
+  end if
+
+End loop
+
+' Put max increase over in summary table

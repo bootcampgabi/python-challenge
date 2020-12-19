@@ -16,3 +16,17 @@ with open(output_path, 'w', newline='') as csvfile:
 
     # Write the second row
     csvwriter.writerow(['Caleb', 'Frost', '505-80-2901'])
+
+
+
+total = 564
+
+output_path = os.path.join("..", "output", "new.txt")
+
+with open(output_path, "w") as txt_file:
+
+    txt_file.write("Summary:\n")
+    txt_file.write("------------------------------\n")
+    txt_file.write(f"Grand Total: {total}\n")
+
+
